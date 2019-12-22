@@ -1,0 +1,31 @@
+<?php
+
+$arrEsperado = array();
+$arrGatosEsperado = array();
+
+$arrEsperado["peticion"] = "add";
+
+$arrGatosEsperado["nombre"] = "";
+$arrGatosEsperado["raza"] = "";
+$arrGatosEsperado["color"] = "";
+
+$arrEsperado["GatosAnnadir"] = $arrGatosEsperado;
+
+function JSONCorrectoAnnadir($recibidogato){
+	
+	$auxCorrecto = false;
+	
+	if(isset($recibidogato["peticion"]) && $recibidogato["peticion"] ="add" && isset($recibidogato["gatosAnnadir"])){
+		
+		$auxgato = $recibidogato["gatosAnnadir"];
+		if(isset($auxgato["nombre"]) && isset($auxgato["raza"]) && isset($auxgato["color"])){
+			$auxCorrecto = true;
+		}
+		
+	}
+	
+	
+	return $auxCorrecto;
+	
+}
+?>	
