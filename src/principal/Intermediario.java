@@ -27,11 +27,7 @@ public class Intermediario {
 
 		while (!salir) {
 			System.out.println();
-			System.out.println("........ MENU ........... \n" + ".  0 Salir \n" + ".  1 Leer peliculas  \n"
-					+ ".  2 A�adir peliculas \n" + ".  3 Leer Productora \n" + ".  4 A�adir Productora \n"
-					+ ".  5 Borrar una pelicula \n" + ".  6 Borrar todas las peliculas \n"
-					+ ".  7 Borrar una productora \n" + ".  8 Borrar todas las productoras \n"
-					+ ".  9 Actualizar productora \n" + ".  10 Actualizar pelicula \n" + "..........................");
+			System.out.println("........ MENU ........... \n" + ".  0 Salir \n" + ".  1 Leer peliculas  \n" + ".  2 A�adir peliculas \n" + ".  3 Borrar una pelicula \n" + ".  4 Borrar todas las peliculas \n" + ".  5 Actualizar pelicula \n" + "..........................");
 			try {
 				op = teclado.nextInt();
 				teclado.nextLine();
@@ -51,24 +47,24 @@ public class Intermediario {
 					Gatos auxGato = this.crearGatos();
 					acceso.anadirGatoJSON(auxGato);
 					break;
-				case 5:
+				case 3:
 					HashMap<Integer, Gatos> verGatos = leeGatos();
 					pintaGatos(verGatos);
 					Gatos auxBorrarGato = this.borrarGato();
 					acceso.borrarGato(auxBorrarGato);
 					break;
-				case 6:
+				case 4:
 					Gatos auxBorrarGatos = this.borrarGatos();
 					acceso.borrarGatos(auxBorrarGatos);
 					break;
-				case 10:
+				case 5:
 					HashMap<Integer, Gatos> verGatosParaActualizar = leeGatos();
 					pintaGatos(verGatosParaActualizar);
 					Gatos auxActualizarGato = this.actualizarGato();
 					acceso.actualizarGato(auxActualizarGato);
 					break;
 				default:
-					System.out.println("Opcion invalida: marque un numero de 0 a 10");
+					System.out.println("Opcion invalida: marque un numero de 0 a 5");
 					break;
 				}
 
